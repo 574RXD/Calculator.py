@@ -1,70 +1,83 @@
-print("****Calculadora PY****")
-print("1.Adição")
-print("2.Subtração")
-print("3.Multiplicação")
-print("4.Divisão")
-print("5.All")
-print("6.Sair")
-print("***********************")
- 
-menu=input("Escolha uma opção: ")
- 
-if menu == "1":
-    print("Escolha um valor.")
-    n1 = float(input())
-    print("Escolha outro valor.")
-    n2 = float(input())
-    so = n1 + n2
-    print(so)
+def soma():
+    n1 = float(input("Escolha um valor: "))
+    n2 = float(input("Escolha outro valor: "))
+    print(n1 + n2)
 
-elif menu == "2":
-    print("Escolha um valor.")
-    n1 = float(input())
-    print("Escolha outro valor.")
-    n2 = float(input())
-    su = n1 - n2
-    print(su) 
+def sub():    
+    n1 = float(input("Escolha um valor: "))
+    n2 = float(input("Escolha outro valor: "))
+    print(n1 - n2)
 
-elif menu == "3":
-    print("Escolha um valor.")
-    n1 = float(input())
-    print("Escolha outro valor.")
-    n2 = float(input())
-    mu = n1 * n2
-    print(mu)
+def mu():
+    n1 = float(input("Escolha um valor: "))
+    n2 = float(input("Escolha outro valor: "))
+    print(n1 * n2)
 
-elif menu == "4":
-    print("Escolha um valor")
-    n1 = float(input())
-    print("Escolha outro valor")
-    n2 = float(input())
-    di = n1 / n2
-    print(di)
+def di():
+    n1 = float(input("Escolha um valor: "))
+    n2 = float(input("Escolha outro valor: "))
+    print(n1 / n2)
 
-elif menu == "5":
-    print("Escolha um valor")
-    n1 = float(input())
-    print("Escolha outro valor.")
-    n2 = float(input())
+def imprimir_menu():
+    print("****Calculadora PY****")
+    print("1.Adição")
+    print("2.Subtração")
+    print("3.Multiplicação")
+    print("4.Divisão")
+    print("5.All")
+    print("0.Sair")
+    print("***********************")
     
-    print("Adição") #adição
-    so = n1 + n2
-    print(so)
-    print("-----------------------")
-    print("Subtração") #subtração
-    su = n1 - n2 
-    print(su)
-    print("-----------------------")
-    print("Multiplicação") #multiplicação
-    mu = n1 * n2
-    print(mu)
-    print("-----------------------")
-    print("Divisão") #divisão
-    di = n1 / n2
-    print(di)
+while True: 
+    imprimir_menu()
+    opcao = input("Escolha uma opção: ")
 
-else:
-    print("Valor incorreto!")
+    if opcao == "1":
+        soma()
+
+    elif opcao == "2":
+        sub() 
+
+    elif opcao == "3":
+        mu()
+        
+    elif opcao == "4":
+        try:
+            di()
+        except ZeroDivisionError:
+            print(">>>Impossivel fazer a divisão")
+
+    elif opcao == "5":
+        n1 = float(input("Escolha um valor: "))
+        n2 = float(input("Escolha outro valor: "))
+        print("--------------")
+        print("Adição:", n1 + n2)
+        print("--------------")
+        print("Subtração:", n1 - n2)
+        print("--------------")
+        print("Multiplicação:", n1 * n2)
+        print("--------------")
+        try:
+            print("Divisão:", n1 / n2)
+            print("--------------")
+        except ZeroDivisionError:
+            print(">>>Impossivel fazer a divisão")
+            print("--------------")
+
+    elif opcao == "0":
+        print(">>>Fechando programa")
+        break
+
+    else:
+        print(">>>Valor incorreto")
+
+
+
+
+
+        
+
+
 
 
 
