@@ -1,2 +1,2 @@
 # Calculator.py
-Calculadora feita em python
+Calculadora simples feita em python
